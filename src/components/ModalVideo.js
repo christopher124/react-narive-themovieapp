@@ -4,6 +4,7 @@ import {Modal, IconButton, Title} from 'react-native-paper';
 import YouTube from 'react-native-youtube';
 import {WebView} from 'react-native-webview';
 import {getVideoMovieApi} from '../api/movies';
+
 export default function ModalVideo(props) {
   const {show, setShow, idMovie} = props;
   const [video, setVideo] = useState(null);
@@ -11,7 +12,7 @@ export default function ModalVideo(props) {
   useEffect(() => {
     getVideoMovieApi(idMovie).then((response) => {
       let idVideo = null;
-      response.result.forEach((video) => {
+      response.results.forEach((video) => {
         if (video.site === 'YouTube' && !idVideo) {
           idVideo = video.key;
         }

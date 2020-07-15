@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, ScrollView, Image} from 'react-native';
-import {Text, Title, IconButton} from 'react-native-paper';
+import {IconButton} from 'react-native-paper';
 import ModalVideo from '../components/ModalVideo';
 import {getMovieByIdApi} from '../api/movies';
 import {BASE_PATH_IMG} from '../utils/constants';

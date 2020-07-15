@@ -1,9 +1,18 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
-import {Drawer, Switch, TouchableRipple, Text} from 'react-native-paper';
+import {
+  Drawer,
+  Switch,
+  TouchableRipple,
+  Text,
+  Avatar,
+  Title,
+  Caption,
+  Paragraph,
+} from 'react-native-paper';
 import usePreference from '../hooks/usePreferences';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function DrawerContent(props) {
   const {navigation} = props;
@@ -20,18 +29,25 @@ export default function DrawerContent(props) {
       <Drawer.Section title="peliculas">
         <Drawer.Item
           label="peliculas"
-          icon="home"
+          icon={({color, size}) => (
+            <Icon name="movie" color={color} size={size} />
+          )}
           active={active === 'home'}
           onPress={() => onChangeScreen('home')}
         />
         <Drawer.Item
           label="Películas populares"
+          icon={({color, size}) => (
+            <Icon name="heart-outline" color={color} size={size} />
+          )}
           active={active === 'popular'}
-          icon="star"
           onPress={() => onChangeScreen('popular')}
         />
         <Drawer.Item
           label="Nuevas películas"
+          icon={({color, size}) => (
+            <Icon name="new-box" color={color} size={size} />
+          )}
           active={active === 'news'}
           onPress={() => onChangeScreen('news')}
         />
@@ -39,11 +55,14 @@ export default function DrawerContent(props) {
       <Drawer.Section title="programas de televicion">
         <Drawer.Item
           label="series de tv"
+          icon={({color, size}) => (
+            <Icon name="monitor" color={color} size={size} />
+          )}
           active={active === 'tv'}
           onPress={() => onChangeScreen('tv')}
         />
       </Drawer.Section>
-      <Drawer.Section title="Opciones">
+      <Drawer.Section title="Preferencias">
         <TouchableRipple>
           <View style={styles.preference}>
             <Text>Tema Oscuro</Text>

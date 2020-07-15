@@ -20,6 +20,7 @@ export default function App() {
 
   DefaultThemePaper.colors.primary = '#192734';
   DarkThemePaper.colors.primary = '#457EB4';
+  DefaultThemePaper.colors.accent = '#E0E2E3';
   DarkThemePaper.colors.accent = '#3E638B';
 
   DarkThemeNavigation.colors.background = '#192734';
